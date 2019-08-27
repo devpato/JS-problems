@@ -7,7 +7,7 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {
+palindrome = (str) => {
     //V1
     //return str.split('').reverse().join('') === str ? true : false;
 

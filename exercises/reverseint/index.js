@@ -7,8 +7,7 @@
 //   reverseInt(500) === 5
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
-
-function reverseInt(n) {
+reverseInt = (n) => {
     //Solution V1
     return parseInt(n.toString().split('').reverse().join('')) * Math.sign(n);
 }
