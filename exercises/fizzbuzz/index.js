@@ -27,11 +27,23 @@ function fizzBuzz(n) {
     //  }
 
     //Solution V2
-    for (let i = 1; i <= n; i++) {
-        const fizz = i % 3 === 0 ? "fizz" : "";
-        const buzz = i % 5 === 0 ? "buzz" : "";
-        console.log(fizz + buzz || i);
-    }
+    // for (let i = 1; i <= n; i++) {
+    //     const fizz = i % 3 === 0 ? "fizz" : "";
+    //     const buzz = i % 5 === 0 ? "buzz" : "";
+    //     console.log(fizz + buzz || i);
+    // }
+
+    //Solution V3
+    if (n == 0)
+        return;
+ 
+    fizzBuzz(n - 1);
+    console.log('n is: ', n);
+    let str = '';
+    if (! (n % 3)) str += 'fizz';
+    if (! (n % 5)) str += 'buzz';
+    
+    console.log( str || n );
 }
 
 module.exports = fizzBuzz;
