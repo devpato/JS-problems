@@ -26,12 +26,23 @@ maxChar = (str) => {
     // }
 
     //Solution V2
-    str.split('').map(c=>{
-        obj[c] ? obj[c]++ : obj[c] = 1 
-    })
+    // str.split('').map(c=>{
+    //     obj[c] ? obj[c]++ : obj[c] = 1 
+    // })
 
-    const keys = Object.keys(obj);
-    return keys.reduce((acc, curr) => obj[curr] > obj[acc] ? curr : acc, keys[0] );
+    // const keys = Object.keys(obj);
+    // return keys.reduce((acc, curr) => obj[curr] > obj[acc] ? curr : acc, keys[0] );
+
+    //Solution V3
+    str.split('').map(c =>{
+        obj[c] =  obj[c] + 1 || 1
+        if ( obj[c] > max) {
+            max = obj[c];
+            maxChar = c;
+        }
+    });
+    
+    return maxChar;
 }
 
 module.exports = maxChar;
