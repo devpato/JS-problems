@@ -10,16 +10,23 @@
 
 chunk = (array, size) => {
   const chunked = [];
+  let index = 0;
+  //Chunked Array V1
+  //   for (let i of array) {
+  //     const last = chunked[chunked.length - 1];
+  //     console.log(last);
+  //     if (!last || last.length === size) {
+  //       chunked.push([i]);
+  //     } else {
+  //       last.push(i);
+  //     }
+  //   }
 
-  //Chuncked Array V1
-  for (let i of array) {
-    const last = chunked[chunked.length - 1];
-    console.log(last);
-    if (!last || last.length === size) {
-      chunked.push([i]);
-    } else {
-      last.push(i);
-    }
+  //Chunked Array V2 0,4
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    console.log(chunked);
+    index += size;
   }
   return chunked;
 };
