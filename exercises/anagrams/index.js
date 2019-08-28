@@ -10,36 +10,32 @@
 
 anagrams = (stringA, stringB) => {
   //V1
-  //   return (
-  //     stringA
-  //       .replace("/[^w]/g")
-  //       .toLowerCase()
-  //       .split("")
-  //       .sort()
-  //       .join() ===
-  //     stringB
-  //       .replace("/[^w]/g")
-  //       .toLowerCase()
-  //       .split("")
-  //       .sort()
-  //       .join()
-  //   );
-
+  return (
+    stringA
+      .replace("/[^w]/g")
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join() ===
+    stringB
+      .replace("/[^w]/g")
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join()
+  );
   //V2
-  const aCharMap = buildingCharMap(stringA);
-  const bCharMap = buildingCharMap(stringB);
-
-  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-    return false;
-  }
-
-  for (let char in aCharMap) {
-    if (aCharMap[char] !== bCharMap[char]) {
-      return false;
-    }
-  }
-
-  return true;
+  //   const aCharMap = buildingCharMap(stringA);
+  //   const bCharMap = buildingCharMap(stringB);
+  //   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+  //     return false;
+  //   }
+  //   for (let char in aCharMap) {
+  //     if (aCharMap[char] !== bCharMap[char]) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
 };
 
 buildingCharMap = str => {
