@@ -9,12 +9,24 @@
 
 capitalize = str => {
   //V1
-  return str
-    .split(" ")
-    .map(w => {
-      return w.charAt(0).toUpperCase() + w.slice(1);
-    })
-    .join(" ");
+  //   return str
+  //     .split(" ")
+  //     .map(w => {
+  //       return w.charAt(0).toUpperCase() + w.slice(1);
+  //     })
+  //     .join(" ");
+
+  //V2
+  const arr = str.split(" ");
+  return arr.reduce((acc, word) => {
+    console.log(acc);
+    return (
+      acc +
+      (acc === "" ? "" : " ") + // add space before next word if necessary
+      word[0].toUpperCase() +
+      word.slice(1)
+    );
+  }, "");
 };
 
 module.exports = capitalize;
