@@ -8,7 +8,7 @@
 
 reverse = (str) => {
     //V1
-    //return str.split('').reverse().join('');
+    // return str.split('').reverse().join('');
     
     //V2
     // let reversed = '';
