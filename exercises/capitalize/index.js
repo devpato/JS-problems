@@ -27,10 +27,15 @@ capitalize = str => {
   //     );
   //   }, "");
   //V3
-  return [...str].reduce(
-    (a, c, i, sa) => a + (i === 0 || sa[i - 1] === " " ? c.toUpperCase() : c),
-    ""
-  );
+  //   return [...str].reduce(
+  //     (a, c, i, sa) => a + (i === 0 || sa[i - 1] === " " ? c.toUpperCase() : c),
+  //     ""
+  //   );
+  //V4
+  return str
+    .split(" ")
+    .reduce((acc, cw) => acc.concat(cw[0].toUpperCase() + cw.slice(1)), [])
+    .join(" ");
 };
 
 module.exports = capitalize;
