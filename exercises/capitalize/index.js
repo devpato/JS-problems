@@ -15,18 +15,22 @@ capitalize = str => {
   //       return w.charAt(0).toUpperCase() + w.slice(1);
   //     })
   //     .join(" ");
-
   //V2
-  const arr = str.split(" ");
-  return arr.reduce((acc, word) => {
-    console.log(acc);
-    return (
-      acc +
-      (acc === "" ? "" : " ") + // add space before next word if necessary
-      word[0].toUpperCase() +
-      word.slice(1)
-    );
-  }, "");
+  //   const arr = str.split(" ");
+  //   return arr.reduce((acc, word) => {
+  //     console.log(acc);
+  //     return (
+  //       acc +
+  //       (acc === "" ? "" : " ") + // add space before next word if necessary
+  //       word[0].toUpperCase() +
+  //       word.slice(1)
+  //     );
+  //   }, "");
+  //V3
+  return [...str].reduce(
+    (a, c, i, sa) => a + (i === 0 || sa[i - 1] === " " ? c.toUpperCase() : c),
+    ""
+  );
 };
 
 module.exports = capitalize;
