@@ -17,8 +17,8 @@
 //       '### '
 //       '####'
 
-//V1
-steps = n => {
+steps = (n, row = 0, stair = '') => {
+  //V1
   //   for (let r = 0; r < n; r++) {
   //     let stair = '';
   //     for (let c = 0; c < n; c++) {
@@ -26,6 +26,18 @@ steps = n => {
   //     }
   //     console.log(stair);
   //   }
+
+  //V2
+  if (n === row) {
+    return;
+  }
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
+  }
+
+  stair.length <= row ? (stair += '#') : (stair += ' ');
+  steps(n, row, stair);
 };
 
 module.exports = steps;
