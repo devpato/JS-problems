@@ -28,16 +28,27 @@ steps = (n, row = 0, stair = '') => {
   //   }
 
   //V2
-  if (n === row) {
-    return;
-  }
-  if (n === stair.length) {
-    console.log(stair);
-    return steps(n, row + 1);
-  }
+  //   if (n === row) {
+  //     return;
+  //   }
+  //   if (n === stair.length) {
+  //     console.log(stair);
+  //     return steps(n, row + 1);
+  //   }
 
-  stair.length <= row ? (stair += '#') : (stair += ' ');
-  steps(n, row, stair);
+  //   stair.length <= row ? (stair += '#') : (stair += ' ');
+  //   steps(n, row, stair);
+
+  //   Array.from({ length: n }).forEach((_, i) => {
+  //     console.log(''.padStart(i + 1, '#').padEnd(n, ' '));
+  //   });
+
+  //V3
+  Array.from({ length: n }).map((_, i) => {
+    console.log(''.padStart(i + 1, '#').padEnd(n, ' '));
+  });
+
+  //V4
 };
 
 module.exports = steps;
