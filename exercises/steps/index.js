@@ -17,6 +17,19 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+//V1
+steps = n => {
+  for (let r = 0; r < n; r++) {
+    let stair = '';
+    for (let c = 0; c < n; c++) {
+      if (c <= r) {
+        stair += '#';
+      } else {
+        stair += ' ';
+      }
+    }
+    console.log(stair);
+  }
+};
 
 module.exports = steps;
