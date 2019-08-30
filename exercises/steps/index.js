@@ -17,7 +17,8 @@
 //       '### '
 //       '####'
 
-steps = (n, row = 0, stair = '') => {
+steps = (n, row = 1, stair = '') => {
+  //change row to 0
   //V1
   //   for (let r = 0; r < n; r++) {
   //     let stair = '';
@@ -44,11 +45,19 @@ steps = (n, row = 0, stair = '') => {
   //   });
 
   //V3
-  Array.from({ length: n }).map((_, i) => {
-    console.log(''.padStart(i + 1, '#').padEnd(n, ' '));
-  });
+  //   Array.from({ length: n }).map((_, i) => {
+  //     console.log(''.padStart(i + 1, '#').padEnd(n, ' '));
+  //   });
 
-  //V4
+  //V4 - change row to 1
+  if (row > n) {
+    return;
+  }
+  console.log('#'.repeat(row) + ' '.repeat(n - row));
+
+  row++;
+
+  steps(n--, row);
 };
 
 module.exports = steps;
